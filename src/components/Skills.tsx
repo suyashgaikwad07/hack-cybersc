@@ -7,13 +7,13 @@ const Skills = () => {
     { 
       icon: Terminal, 
       name: 'Python Programming', 
-      level: 75,
+      level: 70,
       description: 'Strong foundation for logic and problem-solving' 
     },
     { 
       icon: Code, 
       name: 'C Language', 
-      level: 70,
+      level: 90,
       description: 'Core understanding of programming fundamentals' 
     },
     { 
