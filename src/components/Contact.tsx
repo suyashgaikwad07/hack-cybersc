@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, Github, Send, Loader2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Loader2 } from 'lucide-react';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -53,7 +53,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: Phone, label: 'Phone', value: '9421769101', link: 'tel:9421769101' },
     { icon: Mail, label: 'Email', value: 'suyashtg11@gmail.com', link: 'mailto:suyashtg11@gmail.com' },
-    { icon: Github, label: 'GitHub', value: 'View Profile', link: 'https://github.com/suyashgaikwad07/Basic-Programming.../commits/python/' }
+    { icon: MapPin, label: 'Location', value: 'Pune, India', link: 'https://maps.google.com/?q=Pune,India' }
   ];
 
   return (
@@ -81,8 +81,8 @@ const Contact = () => {
                   >
                     <a 
                       href={info.link}
-                      target={info.label === 'GitHub' ? '_blank' : undefined}
-                      rel={info.label === 'GitHub' ? 'noopener noreferrer' : undefined}
+                      target={info.label === 'Location' ? '_blank' : undefined}
+                      rel={info.label === 'Location' ? 'noopener noreferrer' : undefined}
                       className="flex items-center gap-4"
                     >
                       <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
