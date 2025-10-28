@@ -15,8 +15,8 @@ const Projects = () => {
     {
       icon: Shield,
       title: 'Cyber Learning Tools',
-      description: 'Future project focused on building cybersecurity awareness tools and simulations.',
-      status: 'Planned',
+      description: 'Future project focused on building cybersecurity awareness tools and simulations to enhance online safety knowledge.',
+      status: 'Coming Soon',
       link: null,
       color: 'from-accent to-primary'
     }
@@ -51,7 +51,7 @@ const Projects = () => {
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                     project.status === 'Completed' 
                       ? 'bg-primary/20 text-primary' 
-                      : 'bg-secondary text-muted-foreground'
+                      : 'bg-accent/20 text-accent border border-accent/50'
                   }`}>
                     {project.status}
                   </span>
