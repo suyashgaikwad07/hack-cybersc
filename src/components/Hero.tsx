@@ -1,6 +1,6 @@
 import { Shield, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
-import profileImage from '@/assets/profile-placeholder.jpg';
+import profileImage from '@/assets/profile-image.png';
 import heroBackground from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
