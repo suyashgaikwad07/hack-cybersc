@@ -15,9 +15,9 @@ const Projects = () => {
     {
       icon: Shield,
       title: 'Cyber Learning Tools',
-      description: 'Interactive cybersecurity tools including a secure password generator to enhance online safety and security awareness.',
+      description: 'Interactive cybersecurity tools including password generator and hasher to enhance online safety and security awareness.',
       status: 'Active',
-      link: '/password-generator',
+      link: '/cyber-tools',
       color: 'from-accent to-primary'
     }
   ];

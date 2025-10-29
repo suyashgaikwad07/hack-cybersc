@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PasswordGeneratorPage from "./pages/PasswordGeneratorPage";
+import PasswordHasherPage from "./pages/PasswordHasherPage";
+import CyberToolsPage from "./pages/CyberToolsPage";
 import GamesPage from "./pages/GamesPage";
 import GuessNumberPage from "./pages/GuessNumberPage";
 import RockPaperScissorsPage from "./pages/RockPaperScissorsPage";
@@ -20,7 +22,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/cyber-tools" element={<CyberToolsPage />} />
           <Route path="/password-generator" element={<PasswordGeneratorPage />} />
+          <Route path="/password-hasher" element={<PasswordHasherPage />} />
           <Route path="/games" element={<GamesPage />} />
           <Route path="/games/guess-number" element={<GuessNumberPage />} />
           <Route path="/games/rock-paper-scissors" element={<RockPaperScissorsPage />} />
