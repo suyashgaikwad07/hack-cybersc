@@ -7,9 +7,9 @@ const Projects = () => {
     {
       icon: Gamepad2,
       title: 'Funny Games',
-      description: 'A fun Python-based project building small interactive games to practice coding logic and creativity.',
-      status: 'Completed',
-      link: 'https://github.com/suyashgaikwad07/Basic-Programming.../commits/python/',
+      description: 'Fun interactive games including Guess the Number and Rock Paper Scissors to practice coding logic and creativity.',
+      status: 'Active',
+      link: '/games',
       color: 'from-primary to-accent'
     },
     {
