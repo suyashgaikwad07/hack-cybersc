@@ -15,9 +15,9 @@ const Projects = () => {
     {
       icon: Shield,
       title: 'Cyber Learning Tools',
-      description: 'Future project focused on building cybersecurity awareness tools and simulations to enhance online safety knowledge.',
-      status: 'Coming Soon',
-      link: null,
+      description: 'Interactive cybersecurity tools including a secure password generator to enhance online safety and security awareness.',
+      status: 'Active',
+      link: '/password-generator',
       color: 'from-accent to-primary'
     }
   ];
@@ -65,9 +65,15 @@ const Projects = () => {
                   <Button 
                     variant="outline"
                     className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground w-full group-hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]"
-                    onClick={() => window.open(project.link, '_blank')}
+                    onClick={() => {
+                      if (project.link?.startsWith('http')) {
+                        window.open(project.link, '_blank');
+                      } else {
+                        window.location.href = project.link || '#';
+                      }
+                    }}
                   >
-                    View on GitHub
+                    {project.link.startsWith('http') ? 'View on GitHub' : 'Try It Out'}
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
                 )}
