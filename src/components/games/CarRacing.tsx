@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import playerCarImg from '@/assets/player-car.png';
+import obstacleCarImg from '@/assets/obstacle-car.png';
 
 type Car = {
   x: number;
@@ -30,6 +32,8 @@ const CarRacing = () => {
   const roadOffset = useRef(0);
   const gameSpeed = useRef(5);
   const gameLoopRef = useRef<number>();
+  const playerCarImage = useRef<HTMLImageElement | null>(null);
+  const obstacleCarImage = useRef<HTMLImageElement | null>(null);
 
   const generateCar = () => {
     const lane = Math.floor(Math.random() * 3);
@@ -70,6 +74,21 @@ const CarRacing = () => {
   };
 
   useEffect(() => {
+    // Load car images
+    const playerImg = new Image();
+    playerImg.src = playerCarImg;
+    playerImg.onload = () => {
+      playerCarImage.current = playerImg;
+    };
+
+    const obstacleImg = new Image();
+    obstacleImg.src = obstacleCarImg;
+    obstacleImg.onload = () => {
+      obstacleCarImage.current = obstacleImg;
+    };
+  }, []);
+
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!gameStarted || gameOver) return;
       if (e.key === 'ArrowLeft') moveLeft();
@@ -95,11 +114,12 @@ const CarRacing = () => {
     const carSpawnInterval = 1500;
 
     const gameLoop = () => {
-      // Move player
+      // Move player with consistent speed during turns
+      const turnSpeed = 7; // Increased turn speed for smoother movement
       if (moveDirection.current === -1) {
-        playerX.current = Math.max(0, playerX.current - 5);
+        playerX.current = Math.max(0, playerX.current - turnSpeed);
       } else if (moveDirection.current === 1) {
-        playerX.current = Math.min(canvasWidth - carWidth, playerX.current + 5);
+        playerX.current = Math.min(canvasWidth - carWidth, playerX.current + turnSpeed);
       }
 
       // Update road animation
@@ -182,20 +202,36 @@ const CarRacing = () => {
       ctx.stroke();
     }
 
-    // Draw player car
-    ctx.fillStyle = '#00ffff';
-    ctx.fillRect(playerX.current, playerY.current, carWidth, carHeight);
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(playerX.current + 5, playerY.current + 10, 10, 15);
-    ctx.fillRect(playerX.current + 25, playerY.current + 10, 10, 15);
+    // Draw player car with realistic image
+    if (playerCarImage.current) {
+      ctx.drawImage(
+        playerCarImage.current,
+        playerX.current,
+        playerY.current,
+        carWidth,
+        carHeight
+      );
+    } else {
+      // Fallback to colored rectangle
+      ctx.fillStyle = '#00ffff';
+      ctx.fillRect(playerX.current, playerY.current, carWidth, carHeight);
+    }
 
-    // Draw obstacle cars
+    // Draw obstacle cars with realistic images
     cars.current.forEach(car => {
-      ctx.fillStyle = '#ff0000';
-      ctx.fillRect(car.x, car.y, carWidth, carHeight);
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(car.x + 5, car.y + 35, 10, 15);
-      ctx.fillRect(car.x + 25, car.y + 35, 10, 15);
+      if (obstacleCarImage.current) {
+        ctx.drawImage(
+          obstacleCarImage.current,
+          car.x,
+          car.y,
+          carWidth,
+          carHeight
+        );
+      } else {
+        // Fallback to colored rectangle
+        ctx.fillStyle = '#ff0000';
+        ctx.fillRect(car.x, car.y, carWidth, carHeight);
+      }
     });
   };
 
