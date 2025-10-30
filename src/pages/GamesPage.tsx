@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Gamepad2, Target, HandMetal, Worm } from 'lucide-react';
+import { Gamepad2, Target, HandMetal, Worm, Car } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const GamesPage = () => {
@@ -29,6 +29,13 @@ const GamesPage = () => {
       description: 'Classic arcade snake game! Eat food, grow longer, and avoid hitting walls or yourself.',
       color: 'from-primary to-accent',
       route: '/games/snake'
+    },
+    {
+      icon: Car,
+      title: 'Car Racing',
+      description: 'Race down the highway! Dodge incoming cars and see how long you can survive.',
+      color: 'from-accent to-primary',
+      route: '/games/car-racing'
     }
   ];
 

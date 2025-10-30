@@ -12,6 +12,7 @@ import GamesPage from "./pages/GamesPage";
 import GuessNumberPage from "./pages/GuessNumberPage";
 import RockPaperScissorsPage from "./pages/RockPaperScissorsPage";
 import SnakeGamePage from "./pages/SnakeGamePage";
+import CarRacingPage from "./pages/CarRacingPage";
 import CaesarCipherPage from "./pages/CaesarCipherPage";
 import PortScannerPage from "./pages/PortScannerPage";
 import V2XMessageSigningPage from "./pages/V2XMessageSigningPage";
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/games/guess-number" element={<GuessNumberPage />} />
           <Route path="/games/rock-paper-scissors" element={<RockPaperScissorsPage />} />
           <Route path="/games/snake" element={<SnakeGamePage />} />
+          <Route path="/games/car-racing" element={<CarRacingPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

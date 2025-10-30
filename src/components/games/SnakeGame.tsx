@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
+import { ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 type Direction = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 'STOP';
 type Position = { x: number; y: number };
@@ -181,7 +182,7 @@ const SnakeGame = () => {
           <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Snake Game
           </h2>
-          <p className="text-muted-foreground">Use arrow keys to control the snake</p>
+          <p className="text-muted-foreground text-sm md:text-base">Use arrow keys (PC) or buttons (Mobile)</p>
         </div>
 
         <div className="flex justify-between items-center px-4">
@@ -193,13 +194,55 @@ const SnakeGame = () => {
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center gap-4">
           <canvas
             ref={canvasRef}
             width={canvasSize}
             height={canvasSize}
-            className="border-2 border-primary/50 rounded-lg bg-background"
+            className="border-2 border-primary/50 rounded-lg bg-background max-w-full h-auto"
           />
+
+          {/* Mobile controls */}
+          <div className="grid grid-cols-3 gap-2 md:hidden">
+            <div></div>
+            <Button
+              onClick={() => { if (direction.current !== 'DOWN') nextDirection.current = 'UP'; }}
+              variant="outline"
+              size="lg"
+              className="w-16 h-16 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+              disabled={!gameStarted || gameOver}
+            >
+              <ChevronUp className="w-6 h-6" />
+            </Button>
+            <div></div>
+            <Button
+              onClick={() => { if (direction.current !== 'RIGHT') nextDirection.current = 'LEFT'; }}
+              variant="outline"
+              size="lg"
+              className="w-16 h-16 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+              disabled={!gameStarted || gameOver}
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </Button>
+            <Button
+              onClick={() => { if (direction.current !== 'UP') nextDirection.current = 'DOWN'; }}
+              variant="outline"
+              size="lg"
+              className="w-16 h-16 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+              disabled={!gameStarted || gameOver}
+            >
+              <ChevronDown className="w-6 h-6" />
+            </Button>
+            <Button
+              onClick={() => { if (direction.current !== 'LEFT') nextDirection.current = 'RIGHT'; }}
+              variant="outline"
+              size="lg"
+              className="w-16 h-16 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+              disabled={!gameStarted || gameOver}
+            >
+              <ChevronRight className="w-6 h-6" />
+            </Button>
+          </div>
         </div>
 
         {gameOver && (
