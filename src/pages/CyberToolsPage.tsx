@@ -22,6 +22,27 @@ const CyberToolsPage = () => {
       description: 'Securely hash and verify passwords using SHA-256 with salt. Learn how password hashing protects user data.',
       color: 'from-accent to-primary',
       route: '/password-hasher'
+    },
+    {
+      icon: Lock,
+      title: 'Caesar Cipher',
+      description: 'Encrypt and decrypt messages using the classic Caesar cipher substitution technique.',
+      color: 'from-primary to-accent',
+      route: '/caesar-cipher'
+    },
+    {
+      icon: Shield,
+      title: 'Port Scanner',
+      description: 'Educational port scanning simulator to learn about network security and open ports.',
+      color: 'from-accent to-primary',
+      route: '/port-scanner'
+    },
+    {
+      icon: Shield,
+      title: 'V2X Message Signing',
+      description: 'Learn how vehicle-to-everything communication uses message signing to ensure authenticity and prevent tampering.',
+      color: 'from-primary to-accent',
+      route: '/v2x-signing'
     }
   ];
 

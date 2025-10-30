@@ -11,6 +11,10 @@ import CyberToolsPage from "./pages/CyberToolsPage";
 import GamesPage from "./pages/GamesPage";
 import GuessNumberPage from "./pages/GuessNumberPage";
 import RockPaperScissorsPage from "./pages/RockPaperScissorsPage";
+import SnakeGamePage from "./pages/SnakeGamePage";
+import CaesarCipherPage from "./pages/CaesarCipherPage";
+import PortScannerPage from "./pages/PortScannerPage";
+import V2XMessageSigningPage from "./pages/V2XMessageSigningPage";
 
 const queryClient = new QueryClient();
 
@@ -25,9 +29,13 @@ const App = () => (
           <Route path="/cyber-tools" element={<CyberToolsPage />} />
           <Route path="/password-generator" element={<PasswordGeneratorPage />} />
           <Route path="/password-hasher" element={<PasswordHasherPage />} />
+          <Route path="/caesar-cipher" element={<CaesarCipherPage />} />
+          <Route path="/port-scanner" element={<PortScannerPage />} />
+          <Route path="/v2x-signing" element={<V2XMessageSigningPage />} />
           <Route path="/games" element={<GamesPage />} />
           <Route path="/games/guess-number" element={<GuessNumberPage />} />
           <Route path="/games/rock-paper-scissors" element={<RockPaperScissorsPage />} />
+          <Route path="/games/snake" element={<SnakeGamePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
