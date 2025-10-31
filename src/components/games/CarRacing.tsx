@@ -4,11 +4,14 @@ import { Button } from '../ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import playerCarImg from '@/assets/player-car.png';
 import obstacleCarImg from '@/assets/obstacle-car.png';
+import obstacleCarImg2 from '@/assets/obstacle-car-2.png';
+import obstacleCarImg3 from '@/assets/obstacle-car-3.png';
 
 type Car = {
   x: number;
   y: number;
   speed: number;
+  imageIndex: number;
 };
 
 const CarRacing = () => {
@@ -33,15 +36,18 @@ const CarRacing = () => {
   const gameSpeed = useRef(5);
   const gameLoopRef = useRef<number>();
   const playerCarImage = useRef<HTMLImageElement | null>(null);
-  const obstacleCarImage = useRef<HTMLImageElement | null>(null);
+  const obstacleCarImages = useRef<(HTMLImageElement | null)[]>([null, null, null]);
 
   const generateCar = () => {
     const lane = Math.floor(Math.random() * 3);
     const x = lane * laneWidth + laneWidth / 2 - carWidth / 2;
+    const imageIndex = Math.floor(Math.random() * 3);
+    const speedVariation = Math.random() * 2 - 1;
     cars.current.push({
       x,
       y: -carHeight,
-      speed: gameSpeed.current
+      speed: gameSpeed.current + speedVariation,
+      imageIndex
     });
   };
 
@@ -81,11 +87,14 @@ const CarRacing = () => {
       playerCarImage.current = playerImg;
     };
 
-    const obstacleImg = new Image();
-    obstacleImg.src = obstacleCarImg;
-    obstacleImg.onload = () => {
-      obstacleCarImage.current = obstacleImg;
-    };
+    const obstacleImgs = [obstacleCarImg, obstacleCarImg2, obstacleCarImg3];
+    obstacleImgs.forEach((imgSrc, index) => {
+      const img = new Image();
+      img.src = imgSrc;
+      img.onload = () => {
+        obstacleCarImages.current[index] = img;
+      };
+    });
   }, []);
 
   useEffect(() => {
@@ -114,8 +123,8 @@ const CarRacing = () => {
     const carSpawnInterval = 1500;
 
     const gameLoop = () => {
-      // Move player with consistent speed during turns
-      const turnSpeed = 7; // Increased turn speed for smoother movement
+      // Move player with smooth acceleration
+      const turnSpeed = 8;
       if (moveDirection.current === -1) {
         playerX.current = Math.max(0, playerX.current - turnSpeed);
       } else if (moveDirection.current === 1) {
@@ -202,8 +211,12 @@ const CarRacing = () => {
       ctx.stroke();
     }
 
-    // Draw player car with realistic image
+    // Draw player car with realistic image and glow effect
     if (playerCarImage.current) {
+      // Add glow effect
+      ctx.shadowColor = '#00ffff';
+      ctx.shadowBlur = 15;
+      
       ctx.drawImage(
         playerCarImage.current,
         playerX.current,
@@ -211,6 +224,10 @@ const CarRacing = () => {
         carWidth,
         carHeight
       );
+      
+      // Reset shadow
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
     } else {
       // Fallback to colored rectangle
       ctx.fillStyle = '#00ffff';
@@ -219,14 +236,27 @@ const CarRacing = () => {
 
     // Draw obstacle cars with realistic images
     cars.current.forEach(car => {
-      if (obstacleCarImage.current) {
+      const carImage = obstacleCarImages.current[car.imageIndex];
+      if (carImage) {
+        // Add shadow effect
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+        ctx.shadowBlur = 10;
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+        
         ctx.drawImage(
-          obstacleCarImage.current,
+          carImage,
           car.x,
           car.y,
           carWidth,
           carHeight
         );
+        
+        // Reset shadow
+        ctx.shadowColor = 'transparent';
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
       } else {
         // Fallback to colored rectangle
         ctx.fillStyle = '#ff0000';
