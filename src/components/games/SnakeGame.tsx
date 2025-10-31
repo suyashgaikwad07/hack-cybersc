@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import snakeHead from '@/assets/snake-head.png';
 
 type Direction = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT' | 'STOP';
 type Position = { x: number; y: number };
@@ -152,14 +153,29 @@ const SnakeGame = () => {
     ctx.fillRect(0, 0, canvasSize, canvasSize);
 
     // Draw snake
+    const snakeImage = new Image();
+    snakeImage.src = snakeHead;
+    
     snake.current.forEach((segment, index) => {
-      ctx.fillStyle = index === 0 ? '#00ffff' : '#888888';
-      ctx.fillRect(
-        segment.x * gridSize,
-        segment.y * gridSize,
-        gridSize - 2,
-        gridSize - 2
-      );
+      if (index === 0) {
+        // Draw head with custom image
+        ctx.drawImage(
+          snakeImage,
+          segment.x * gridSize,
+          segment.y * gridSize,
+          gridSize,
+          gridSize
+        );
+      } else {
+        // Draw body
+        ctx.fillStyle = '#88cc44';
+        ctx.fillRect(
+          segment.x * gridSize,
+          segment.y * gridSize,
+          gridSize - 2,
+          gridSize - 2
+        );
+      }
     });
 
     // Draw food
