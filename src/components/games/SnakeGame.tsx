@@ -167,14 +167,17 @@ const SnakeGame = () => {
           gridSize
         );
       } else {
-        // Draw body
-        ctx.fillStyle = '#88cc44';
-        ctx.fillRect(
-          segment.x * gridSize,
-          segment.y * gridSize,
+        // Draw body with green color
+        ctx.fillStyle = '#6B8E23';
+        ctx.beginPath();
+        ctx.roundRect(
+          segment.x * gridSize + 1,
+          segment.y * gridSize + 1,
           gridSize - 2,
-          gridSize - 2
+          gridSize - 2,
+          4
         );
+        ctx.fill();
       }
     });
 
