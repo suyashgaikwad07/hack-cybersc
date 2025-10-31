@@ -68,11 +68,11 @@ const CarRacing = () => {
   };
 
   const moveLeft = () => {
-    moveDirection.current = -1;
+    moveDirection.current = 1;
   };
 
   const moveRight = () => {
-    moveDirection.current = 1;
+    moveDirection.current = -1;
   };
 
   const stopMove = () => {
