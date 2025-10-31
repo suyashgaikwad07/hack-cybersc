@@ -194,8 +194,11 @@ const CarRacing = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Draw road
-    ctx.fillStyle = '#2d3748';
+    // Draw road with gradient
+    const gradient = ctx.createLinearGradient(0, 0, 0, canvasHeight);
+    gradient.addColorStop(0, '#1a202c');
+    gradient.addColorStop(1, '#2d3748');
+    ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
     // Draw lane lines
@@ -211,11 +214,12 @@ const CarRacing = () => {
       ctx.stroke();
     }
 
-    // Draw player car with realistic image and glow effect
+    // Draw player car with realistic image and animated glow effect
     if (playerCarImage.current) {
-      // Add glow effect
+      // Add animated glow effect
+      const glowIntensity = 10 + Math.sin(Date.now() / 200) * 5;
       ctx.shadowColor = '#00ffff';
-      ctx.shadowBlur = 15;
+      ctx.shadowBlur = glowIntensity;
       
       ctx.drawImage(
         playerCarImage.current,
