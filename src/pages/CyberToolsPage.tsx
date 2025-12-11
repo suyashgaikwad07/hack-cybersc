@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, Lock, Hash, Key, FileCode, Network } from 'lucide-react';
+import { Shield, Lock, Hash, Key, FileCode, Network, ImageIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const CyberToolsPage = () => {
@@ -71,6 +71,13 @@ const CyberToolsPage = () => {
       description: 'Educational packet capture simulator showing network traffic structure and protocols.',
       color: 'from-primary to-accent',
       route: '/packet-analyzer'
+    },
+    {
+      icon: ImageIcon,
+      title: 'Steganography',
+      description: 'Hide secret messages within images using LSB encoding. Extract hidden messages from images.',
+      color: 'from-accent to-primary',
+      route: '/steganography'
     }
   ];
 
