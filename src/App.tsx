@@ -16,6 +16,10 @@ import CarRacingPage from "./pages/CarRacingPage";
 import CaesarCipherPage from "./pages/CaesarCipherPage";
 import PortScannerPage from "./pages/PortScannerPage";
 import V2XMessageSigningPage from "./pages/V2XMessageSigningPage";
+import HashGeneratorPage from "./pages/HashGeneratorPage";
+import Base64EncoderPage from "./pages/Base64EncoderPage";
+import XorCipherPage from "./pages/XorCipherPage";
+import NetworkPacketAnalyzerPage from "./pages/NetworkPacketAnalyzerPage";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +37,10 @@ const App = () => (
           <Route path="/caesar-cipher" element={<CaesarCipherPage />} />
           <Route path="/port-scanner" element={<PortScannerPage />} />
           <Route path="/v2x-signing" element={<V2XMessageSigningPage />} />
+          <Route path="/hash-generator" element={<HashGeneratorPage />} />
+          <Route path="/base64-encoder" element={<Base64EncoderPage />} />
+          <Route path="/xor-cipher" element={<XorCipherPage />} />
+          <Route path="/packet-analyzer" element={<NetworkPacketAnalyzerPage />} />
           <Route path="/games" element={<GamesPage />} />
           <Route path="/games/guess-number" element={<GuessNumberPage />} />
           <Route path="/games/rock-paper-scissors" element={<RockPaperScissorsPage />} />
