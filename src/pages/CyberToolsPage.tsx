@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, Lock, Hash } from 'lucide-react';
+import { Shield, Lock, Hash, Key, FileCode, Network } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const CyberToolsPage = () => {
@@ -43,6 +43,34 @@ const CyberToolsPage = () => {
       description: 'Learn how vehicle-to-everything communication uses message signing to ensure authenticity and prevent tampering.',
       color: 'from-primary to-accent',
       route: '/v2x-signing'
+    },
+    {
+      icon: Hash,
+      title: 'Hash Generator',
+      description: 'Generate SHA-1, SHA-256, and SHA-512 hashes for any input text. Learn about cryptographic hash functions.',
+      color: 'from-accent to-primary',
+      route: '/hash-generator'
+    },
+    {
+      icon: FileCode,
+      title: 'Base64 Encoder/Decoder',
+      description: 'Convert text to and from Base64 encoding. Commonly used for data transmission and embedding.',
+      color: 'from-primary to-accent',
+      route: '/base64-encoder'
+    },
+    {
+      icon: Key,
+      title: 'XOR Cipher',
+      description: 'Encrypt and decrypt using XOR bitwise operations. Understand the foundation of modern encryption.',
+      color: 'from-accent to-primary',
+      route: '/xor-cipher'
+    },
+    {
+      icon: Network,
+      title: 'Network Packet Analyzer',
+      description: 'Educational packet capture simulator showing network traffic structure and protocols.',
+      color: 'from-primary to-accent',
+      route: '/packet-analyzer'
     }
   ];
 
