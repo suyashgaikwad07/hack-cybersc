@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, Loader2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Loader2, Github } from 'lucide-react';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -53,6 +53,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: Phone, label: 'Phone', value: '9421769101', link: 'tel:9421769101' },
     { icon: Mail, label: 'Email', value: 'suyashtg11@gmail.com', link: 'mailto:suyashtg11@gmail.com' },
+    { icon: Github, label: 'GitHub', value: 'suyashgaikwad07', link: 'https://github.com/suyashgaikwad07/project-cyber-and-games.git' },
     { icon: MapPin, label: 'Location', value: 'Pune, India', link: 'https://maps.google.com/?q=Pune,India' }
   ];
 
