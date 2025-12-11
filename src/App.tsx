@@ -20,6 +20,7 @@ import HashGeneratorPage from "./pages/HashGeneratorPage";
 import Base64EncoderPage from "./pages/Base64EncoderPage";
 import XorCipherPage from "./pages/XorCipherPage";
 import NetworkPacketAnalyzerPage from "./pages/NetworkPacketAnalyzerPage";
+import SteganographyPage from "./pages/SteganographyPage";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/base64-encoder" element={<Base64EncoderPage />} />
           <Route path="/xor-cipher" element={<XorCipherPage />} />
           <Route path="/packet-analyzer" element={<NetworkPacketAnalyzerPage />} />
+          <Route path="/steganography" element={<SteganographyPage />} />
           <Route path="/games" element={<GamesPage />} />
           <Route path="/games/guess-number" element={<GuessNumberPage />} />
           <Route path="/games/rock-paper-scissors" element={<RockPaperScissorsPage />} />
