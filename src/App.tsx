@@ -6,19 +6,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PasswordGeneratorPage from "./pages/PasswordGeneratorPage";
-import PasswordHasherPage from "./pages/PasswordHasherPage";
 import CyberToolsPage from "./pages/CyberToolsPage";
 import GamesPage from "./pages/GamesPage";
 import GuessNumberPage from "./pages/GuessNumberPage";
 import RockPaperScissorsPage from "./pages/RockPaperScissorsPage";
 import SnakeGamePage from "./pages/SnakeGamePage";
 import CarRacingPage from "./pages/CarRacingPage";
-import CaesarCipherPage from "./pages/CaesarCipherPage";
 import PortScannerPage from "./pages/PortScannerPage";
 import V2XMessageSigningPage from "./pages/V2XMessageSigningPage";
-import HashGeneratorPage from "./pages/HashGeneratorPage";
+import HashToolsPage from "./pages/HashToolsPage";
+import CipherToolsPage from "./pages/CipherToolsPage";
 import Base64EncoderPage from "./pages/Base64EncoderPage";
-import XorCipherPage from "./pages/XorCipherPage";
 import NetworkPacketAnalyzerPage from "./pages/NetworkPacketAnalyzerPage";
 import SteganographyPage from "./pages/SteganographyPage";
 import UrlEncoderPage from "./pages/UrlEncoderPage";
@@ -35,13 +33,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/cyber-tools" element={<CyberToolsPage />} />
           <Route path="/password-generator" element={<PasswordGeneratorPage />} />
-          <Route path="/password-hasher" element={<PasswordHasherPage />} />
-          <Route path="/caesar-cipher" element={<CaesarCipherPage />} />
+          <Route path="/hash-tools" element={<HashToolsPage />} />
+          <Route path="/cipher-tools" element={<CipherToolsPage />} />
           <Route path="/port-scanner" element={<PortScannerPage />} />
           <Route path="/v2x-signing" element={<V2XMessageSigningPage />} />
-          <Route path="/hash-generator" element={<HashGeneratorPage />} />
           <Route path="/base64-encoder" element={<Base64EncoderPage />} />
-          <Route path="/xor-cipher" element={<XorCipherPage />} />
           <Route path="/packet-analyzer" element={<NetworkPacketAnalyzerPage />} />
           <Route path="/steganography" element={<SteganographyPage />} />
           <Route path="/url-encoder" element={<UrlEncoderPage />} />

@@ -18,17 +18,17 @@ const CyberToolsPage = () => {
     },
     {
       icon: Hash,
-      title: 'Password Hasher',
-      description: 'Securely hash and verify passwords using SHA-256 with salt. Learn how password hashing protects user data.',
+      title: 'Hash Tools',
+      description: 'Generate hashes (SHA-1, SHA-256, SHA-512) and securely hash passwords with salt verification.',
       color: 'from-accent to-primary',
-      route: '/password-hasher'
+      route: '/hash-tools'
     },
     {
-      icon: Lock,
-      title: 'Caesar Cipher',
-      description: 'Encrypt and decrypt messages using the classic Caesar cipher substitution technique.',
+      icon: Key,
+      title: 'Cipher Tools',
+      description: 'Encrypt and decrypt using XOR and Caesar cipher techniques. Learn the foundations of encryption.',
       color: 'from-primary to-accent',
-      route: '/caesar-cipher'
+      route: '/cipher-tools'
     },
     {
       icon: Shield,
@@ -45,25 +45,11 @@ const CyberToolsPage = () => {
       route: '/v2x-signing'
     },
     {
-      icon: Hash,
-      title: 'Hash Generator',
-      description: 'Generate SHA-1, SHA-256, and SHA-512 hashes for any input text. Learn about cryptographic hash functions.',
-      color: 'from-accent to-primary',
-      route: '/hash-generator'
-    },
-    {
       icon: FileCode,
       title: 'Base64 Encoder/Decoder',
       description: 'Convert text to and from Base64 encoding. Commonly used for data transmission and embedding.',
-      color: 'from-primary to-accent',
-      route: '/base64-encoder'
-    },
-    {
-      icon: Key,
-      title: 'XOR Cipher',
-      description: 'Encrypt and decrypt using XOR bitwise operations. Understand the foundation of modern encryption.',
       color: 'from-accent to-primary',
-      route: '/xor-cipher'
+      route: '/base64-encoder'
     },
     {
       icon: Network,
