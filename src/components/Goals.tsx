@@ -19,7 +19,7 @@ const Goals = () => {
   };
 
   return (
-    <section id="goals" className="py-24 bg-card/30 backdrop-blur-sm">
+    <section id="goals" className="py-24 bg-card/40 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
