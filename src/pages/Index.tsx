@@ -1,3 +1,4 @@
+import heroBackground from '@/assets/hero-bg.jpg';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
