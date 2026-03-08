@@ -23,7 +23,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-background">
+    <section id="projects" className="py-24 bg-background/70 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
