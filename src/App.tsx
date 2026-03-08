@@ -20,6 +20,10 @@ import Base64EncoderPage from "./pages/Base64EncoderPage";
 import NetworkPacketAnalyzerPage from "./pages/NetworkPacketAnalyzerPage";
 import SteganographyPage from "./pages/SteganographyPage";
 import UrlEncoderPage from "./pages/UrlEncoderPage";
+import TicTacToePage from "./pages/TicTacToePage";
+import MemoryCardPage from "./pages/MemoryCardPage";
+import FlappyBirdPage from "./pages/FlappyBirdPage";
+import Game2048Page from "./pages/Game2048Page";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +50,10 @@ const App = () => (
           <Route path="/games/rock-paper-scissors" element={<RockPaperScissorsPage />} />
           <Route path="/games/snake" element={<SnakeGamePage />} />
           <Route path="/games/car-racing" element={<CarRacingPage />} />
+          <Route path="/games/tic-tac-toe" element={<TicTacToePage />} />
+          <Route path="/games/memory-card" element={<MemoryCardPage />} />
+          <Route path="/games/flappy-bird" element={<FlappyBirdPage />} />
+          <Route path="/games/2048" element={<Game2048Page />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

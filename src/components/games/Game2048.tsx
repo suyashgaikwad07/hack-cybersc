@@ -143,27 +143,24 @@ const Game2048 = () => {
     return () => window.removeEventListener('keydown', handleKey);
   }, [move]);
 
-  // Touch swipe
-  const touchRef = useRef<{ x: number; y: number } | null>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    touchStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!touchRef.current) return;
-    const dx = e.changedTouches[0].clientX - touchRef.current.x;
-    const dy = e.changedTouches[0].clientY - touchRef.current.y;
+    if (!touchStartRef.current) return;
+    const dx = e.changedTouches[0].clientX - touchStartRef.current.x;
+    const dy = e.changedTouches[0].clientY - touchStartRef.current.y;
     if (Math.abs(dx) > Math.abs(dy)) {
       move(dx > 0 ? 'right' : 'left');
     } else {
       move(dy > 0 ? 'down' : 'up');
     }
-    touchRef.current = null;
+    touchStartRef.current = null;
   };
 
-  const touchRefObj = useRef<{ x: number; y: number } | null>(null);
-  // Fix: use a single ref
   const resetGame = () => {
     setGrid(addRandom(addRandom(emptyGrid())));
     setScore(0);
