@@ -6,16 +6,16 @@ const Projects = () => {
   const projects = [
     {
       icon: Gamepad2,
-      title: 'Funny Games',
-      description: 'Fun interactive games including Guess the Number and Rock Paper Scissors to practice coding logic and creativity.',
+      title: 'Software Projects',
+      description: 'Interactive software applications including fun games like Snake, Car Racing, Tic Tac Toe, Flappy Bird, 2048, and more to showcase coding skills and creativity.',
       status: 'Active',
       link: '/games',
       color: 'from-primary to-accent'
     },
     {
       icon: Shield,
-      title: 'Cyber Learning Tools',
-      description: 'Interactive cybersecurity tools including password generator and hasher to enhance online safety and security awareness.',
+      title: 'Cyber Security',
+      description: 'Cybersecurity tools including password generator, hash tools, cipher encryption, port scanner, V2X message signing, steganography, and network analysis.',
       status: 'Active',
       link: '/cyber-tools',
       color: 'from-accent to-primary'
