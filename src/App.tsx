@@ -40,6 +40,7 @@ const App = () => (
           <Route path="/cyber-tools" element={<CyberToolsPage />} />
           <Route path="/cyber-security" element={<CyberSecurityPage />} />
           <Route path="/software" element={<SoftwarePage />} />
+          <Route path="/password-generator" element={<PasswordGeneratorPage />} />
           <Route path="/hash-tools" element={<HashToolsPage />} />
           <Route path="/cipher-tools" element={<CipherToolsPage />} />
           <Route path="/port-scanner" element={<PortScannerPage />} />
