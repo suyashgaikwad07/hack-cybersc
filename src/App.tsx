@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PasswordGeneratorPage from "./pages/PasswordGeneratorPage";
 import CyberToolsPage from "./pages/CyberToolsPage";
+import CyberSecurityPage from "./pages/CyberSecurityPage";
+import SoftwarePage from "./pages/SoftwarePage";
 import GamesPage from "./pages/GamesPage";
 import GuessNumberPage from "./pages/GuessNumberPage";
 import RockPaperScissorsPage from "./pages/RockPaperScissorsPage";
