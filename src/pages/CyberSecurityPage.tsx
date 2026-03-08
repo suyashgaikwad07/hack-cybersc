@@ -2,54 +2,33 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, Lock, Hash, Key, FileCode, Network, ImageIcon, Link } from 'lucide-react';
+import { Lock, Shield, Network, Car } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const CyberToolsPage = () => {
+const CyberSecurityPage = () => {
   const navigate = useNavigate();
 
   const tools = [
     {
-      icon: Lock,
-      title: 'Password Generator',
-      description: 'Generate strong, cryptographically secure passwords with customizable length and character options.',
+      icon: Shield,
+      title: 'Port Scanner',
+      description: 'Educational port scanning simulator to learn about network security, open ports, and vulnerability assessment.',
       color: 'from-primary to-accent',
-      route: '/password-generator'
+      route: '/port-scanner'
     },
     {
-      icon: Hash,
-      title: 'Hash Tools',
-      description: 'Generate hashes (SHA-1, SHA-256, SHA-512) and securely hash passwords with salt verification.',
+      icon: Car,
+      title: 'V2X Message Signing',
+      description: 'Vehicle-to-Everything communication security simulation demonstrating message signing and tamper detection.',
       color: 'from-accent to-primary',
-      route: '/hash-tools'
+      route: '/v2x-signing'
     },
     {
-      icon: Key,
-      title: 'Cipher Tools',
-      description: 'Encrypt and decrypt using XOR and Caesar cipher techniques. Learn the foundations of encryption.',
+      icon: Network,
+      title: 'Network Packet Analyzer',
+      description: 'Educational packet capture simulator showing network traffic structure, protocols, and packet inspection.',
       color: 'from-primary to-accent',
-      route: '/cipher-tools'
-    },
-    {
-      icon: FileCode,
-      title: 'Base64 Encoder/Decoder',
-      description: 'Convert text to and from Base64 encoding. Commonly used for data transmission and embedding.',
-      color: 'from-accent to-primary',
-      route: '/base64-encoder'
-    },
-    {
-      icon: ImageIcon,
-      title: 'Steganography',
-      description: 'Hide secret messages within images using LSB encoding. Extract hidden messages from images.',
-      color: 'from-primary to-accent',
-      route: '/steganography'
-    },
-    {
-      icon: Link,
-      title: 'URL Encoder/Decoder',
-      description: 'Encode special characters for URLs or decode URL-encoded strings safely.',
-      color: 'from-accent to-primary',
-      route: '/url-encoder'
+      route: '/packet-analyzer'
     }
   ];
 
@@ -61,15 +40,15 @@ const CyberToolsPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-block p-4 bg-gradient-to-r from-primary to-accent rounded-full mb-6">
-              <Shield className="w-12 h-12 text-primary-foreground" />
+              <Lock className="w-12 h-12 text-primary-foreground" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Cyber Learning Tools
+                Cyber Security
               </span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Interactive cybersecurity tools to enhance online safety and security awareness
+              Network security tools and simulations for hands-on learning
             </p>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6" />
           </div>
@@ -99,7 +78,7 @@ const CyberToolsPage = () => {
                       onClick={() => navigate(tool.route)}
                     >
                       Try It Out
-                      <Shield className="w-4 h-4 ml-2" />
+                      <Lock className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
                 </Card>
@@ -114,4 +93,4 @@ const CyberToolsPage = () => {
   );
 };
 
-export default CyberToolsPage;
+export default CyberSecurityPage;

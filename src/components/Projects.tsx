@@ -1,4 +1,4 @@
-import { Gamepad2, Shield, ExternalLink } from 'lucide-react';
+import { Gamepad2, Shield, ExternalLink, Code, Lock } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 
@@ -6,18 +6,34 @@ const Projects = () => {
   const projects = [
     {
       icon: Gamepad2,
-      title: 'Software Projects',
-      description: 'Interactive software applications including fun games like Snake, Car Racing, Tic Tac Toe, Flappy Bird, 2048, and more to showcase coding skills and creativity.',
+      title: 'Games',
+      description: 'Interactive games including Snake, Car Racing, Tic Tac Toe, Memory Card, Flappy Bird, 2048, and more.',
       status: 'Active',
       link: '/games',
       color: 'from-primary to-accent'
     },
     {
+      icon: Code,
+      title: 'Software',
+      description: 'Software development projects including Python automation, bots, file organizers, and utility applications.',
+      status: 'Active',
+      link: '/software',
+      color: 'from-accent to-primary'
+    },
+    {
       icon: Shield,
-      title: 'Cyber Security',
-      description: 'Cybersecurity tools including password generator, hash tools, cipher encryption, port scanner, V2X message signing, steganography, and network analysis.',
+      title: 'Cyber Tools',
+      description: 'Encoding and cryptography tools: Password Generator, Hash Tools, Cipher Encryption, Base64, URL Encoder, and Steganography.',
       status: 'Active',
       link: '/cyber-tools',
+      color: 'from-primary to-accent'
+    },
+    {
+      icon: Lock,
+      title: 'Cyber Security',
+      description: 'Network security tools: Port Scanner, V2X Message Signing, Network Packet Analyzer, and security simulations.',
+      status: 'Active',
+      link: '/cyber-security',
       color: 'from-accent to-primary'
     }
   ];
@@ -48,11 +64,7 @@ const Projects = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    project.status === 'Completed' 
-                      ? 'bg-primary/20 text-primary' 
-                      : 'bg-accent/20 text-accent border border-accent/50'
-                  }`}>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent border border-accent/50">
                     {project.status}
                   </span>
                 </div>
@@ -61,22 +73,14 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {project.link && (
-                  <Button 
-                    variant="outline"
-                    className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground w-full group-hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]"
-                    onClick={() => {
-                      if (project.link?.startsWith('http')) {
-                        window.open(project.link, '_blank');
-                      } else {
-                        window.location.href = project.link || '#';
-                      }
-                    }}
-                  >
-                    {project.link.startsWith('http') ? 'View on GitHub' : 'Try It Out'}
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                )}
+                <Button 
+                  variant="outline"
+                  className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground w-full group-hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]"
+                  onClick={() => window.location.href = project.link}
+                >
+                  Try It Out
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             </Card>
           ))}
