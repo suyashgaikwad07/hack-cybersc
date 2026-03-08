@@ -22,7 +22,7 @@ const Hero = () => {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="absolute inset-0 bg-background/70" />
+      <div className="absolute inset-0 bg-background/80" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
