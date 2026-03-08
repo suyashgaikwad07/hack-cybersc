@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PasswordGeneratorPage from "./pages/PasswordGeneratorPage";
 import CyberToolsPage from "./pages/CyberToolsPage";
+import CyberSecurityPage from "./pages/CyberSecurityPage";
+import SoftwarePage from "./pages/SoftwarePage";
 import GamesPage from "./pages/GamesPage";
 import GuessNumberPage from "./pages/GuessNumberPage";
 import RockPaperScissorsPage from "./pages/RockPaperScissorsPage";
@@ -36,6 +38,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/cyber-tools" element={<CyberToolsPage />} />
+          <Route path="/cyber-security" element={<CyberSecurityPage />} />
+          <Route path="/software" element={<SoftwarePage />} />
           <Route path="/password-generator" element={<PasswordGeneratorPage />} />
           <Route path="/hash-tools" element={<HashToolsPage />} />
           <Route path="/cipher-tools" element={<CipherToolsPage />} />
