@@ -33,7 +33,7 @@ const Goals = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 bg-card border-border mb-12 animate-slide-up">
             <p className="text-lg text-center text-foreground/90 leading-relaxed">
-              Currently in the learning stage, I aim to build expertise in programming, game creation, and cybersecurity — eventually offering services in these fields.
+              Now offering services in programming, game creation, and cybersecurity — building on a strong foundation of learning and real-world projects.
             </p>
           </Card>
 
