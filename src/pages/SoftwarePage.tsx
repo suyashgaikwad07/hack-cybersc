@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
-import { Code, Bot, FolderOpen, GraduationCap, Terminal, FileCode } from 'lucide-react';
+import { Code, Bot, FolderOpen, GraduationCap, Terminal, FileCode, Globe, CheckSquare } from 'lucide-react';
 
 const SoftwarePage = () => {
   const projects = [
