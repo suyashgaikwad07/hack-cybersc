@@ -3,10 +3,10 @@ import { Card } from './ui/card';
 
 const Goals = () => {
   const roadmap = [
-    { icon: BookOpen, title: 'Learning', description: 'Building strong foundations', status: 'current' },
-    { icon: Code, title: 'Building Projects', description: 'Creating real-world applications', status: 'in-progress' },
-    { icon: Briefcase, title: 'Offering Services', description: 'Providing professional solutions', status: 'upcoming' },
-    { icon: Trophy, title: 'Professional Developer', description: 'Achieving expertise', status: 'future' }
+    { icon: BookOpen, title: 'Learning', description: 'Building strong foundations', status: 'completed' },
+    { icon: Code, title: 'Building Projects', description: 'Creating real-world applications', status: 'completed' },
+    { icon: Briefcase, title: 'Offering Services', description: 'Providing professional solutions', status: 'current' },
+    { icon: Trophy, title: 'Professional Developer', description: 'Achieving expertise', status: 'upcoming' }
   ];
 
   const getStatusColor = (status: string) => {
