@@ -3,16 +3,16 @@ import { Card } from './ui/card';
 
 const Goals = () => {
   const roadmap = [
-    { icon: BookOpen, title: 'Learning', description: 'Building strong foundations', status: 'current' },
-    { icon: Code, title: 'Building Projects', description: 'Creating real-world applications', status: 'in-progress' },
-    { icon: Briefcase, title: 'Offering Services', description: 'Providing professional solutions', status: 'upcoming' },
-    { icon: Trophy, title: 'Professional Developer', description: 'Achieving expertise', status: 'future' }
+    { icon: BookOpen, title: 'Learning', description: 'Building strong foundations', status: 'completed' },
+    { icon: Code, title: 'Building Projects', description: 'Creating real-world applications', status: 'completed' },
+    { icon: Briefcase, title: 'Offering Services', description: 'Providing professional solutions', status: 'current' },
+    { icon: Trophy, title: 'Professional Developer', description: 'Achieving expertise', status: 'upcoming' }
   ];
 
   const getStatusColor = (status: string) => {
     switch (status) {
+      case 'completed': return 'bg-primary/50 text-primary-foreground';
       case 'current': return 'bg-primary text-primary-foreground';
-      case 'in-progress': return 'bg-primary/70 text-primary-foreground';
       case 'upcoming': return 'bg-secondary text-secondary-foreground';
       default: return 'bg-muted text-muted-foreground';
     }
@@ -33,7 +33,7 @@ const Goals = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 bg-card border-border mb-12 animate-slide-up">
             <p className="text-lg text-center text-foreground/90 leading-relaxed">
-              Currently in the learning stage, I aim to build expertise in programming, game creation, and cybersecurity — eventually offering services in these fields.
+              Now offering services in programming, game creation, and cybersecurity — building on a strong foundation of learning and real-world projects.
             </p>
           </Card>
 
