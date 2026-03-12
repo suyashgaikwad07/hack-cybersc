@@ -11,8 +11,8 @@ const Goals = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
+      case 'completed': return 'bg-primary/50 text-primary-foreground';
       case 'current': return 'bg-primary text-primary-foreground';
-      case 'in-progress': return 'bg-primary/70 text-primary-foreground';
       case 'upcoming': return 'bg-secondary text-secondary-foreground';
       default: return 'bg-muted text-muted-foreground';
     }
