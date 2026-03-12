@@ -7,7 +7,7 @@ const Skills = () => {
     { 
       icon: Terminal, 
       name: 'Python Programming', 
-      level: 70,
+      level: 90,
       description: 'Strong foundation for logic and problem-solving' 
     },
     { 
@@ -19,19 +19,19 @@ const Skills = () => {
     { 
       icon: Globe, 
       name: 'HTML', 
-      level: 65,
-      description: 'Basic front-end development and website structure' 
+      level: 100,
+      description: 'Front-end development and website structure' 
     },
     { 
       icon: Shield, 
       name: 'Cybersecurity', 
-      level: 60,
-      description: 'Learning network security and threat awareness' 
+      level: 80,
+      description: 'Network security and threat awareness' 
     },
     { 
       icon: Gamepad2, 
       name: 'Game Creation', 
-      level: 65,
+      level: 85,
       description: 'Developing Python-based interactive games' 
     }
   ];
