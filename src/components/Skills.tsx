@@ -17,6 +17,12 @@ const Skills = () => {
       description: 'Core understanding of programming fundamentals' 
     },
     { 
+      icon: Code, 
+      name: 'C Advance', 
+      level: 75,
+      description: 'Advanced concepts like pointers, memory management & data structures' 
+    },
+    { 
       icon: Globe, 
       name: 'HTML', 
       level: 100,
