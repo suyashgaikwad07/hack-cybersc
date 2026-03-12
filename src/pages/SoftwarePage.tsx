@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
-import { Code, Bot, FolderOpen, GraduationCap, Terminal, FileCode } from 'lucide-react';
+import { Code, Bot, FolderOpen, GraduationCap, Terminal, FileCode, Globe, CheckSquare } from 'lucide-react';
 
 const SoftwarePage = () => {
   const projects = [
@@ -44,6 +44,20 @@ const SoftwarePage = () => {
       icon: Code,
       title: 'Hangman Game',
       description: 'Terminal-based Hangman word guessing game with ASCII art display.',
+      color: 'from-accent to-primary',
+      tech: ['Python']
+    },
+    {
+      icon: Globe,
+      title: 'Web Scraper',
+      description: 'Automated web scraping tool to extract and organize data from websites efficiently.',
+      color: 'from-primary to-accent',
+      tech: ['Python', 'BeautifulSoup']
+    },
+    {
+      icon: CheckSquare,
+      title: 'To-Do List App',
+      description: 'Task management application to create, track, and organize daily tasks and priorities.',
       color: 'from-accent to-primary',
       tech: ['Python']
     }
