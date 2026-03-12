@@ -46,6 +46,20 @@ const SoftwarePage = () => {
       description: 'Terminal-based Hangman word guessing game with ASCII art display.',
       color: 'from-accent to-primary',
       tech: ['Python']
+    },
+    {
+      icon: Globe,
+      title: 'Web Scraper',
+      description: 'Automated web scraping tool to extract and organize data from websites efficiently.',
+      color: 'from-primary to-accent',
+      tech: ['Python', 'BeautifulSoup']
+    },
+    {
+      icon: CheckSquare,
+      title: 'To-Do List App',
+      description: 'Task management application to create, track, and organize daily tasks and priorities.',
+      color: 'from-accent to-primary',
+      tech: ['Python']
     }
   ];
 
