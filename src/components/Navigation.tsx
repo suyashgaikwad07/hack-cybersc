@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Shield, Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
