@@ -78,7 +78,7 @@ const Projects = () => {
                 <Button 
                   variant="outline"
                   className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground w-full group-hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]"
-                  onClick={() => window.location.href = project.link}
+                  onClick={() => navigate(project.link)}
                 >
                   Try It Out
                   <ExternalLink className="w-4 h-4 ml-2" />
