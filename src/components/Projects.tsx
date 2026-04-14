@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
+  const navigate = useNavigate();
   const projects = [
     {
       icon: Gamepad2,
