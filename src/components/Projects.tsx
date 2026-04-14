@@ -1,6 +1,7 @@
 import { Gamepad2, Shield, ExternalLink, Code, Lock } from 'lucide-react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
   const projects = [
